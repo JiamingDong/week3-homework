@@ -1,0 +1,45 @@
+<div class="row-fluid">
+<h2><%=@place.title%> <%= link_to "(Edit)", "/places/#{@place.id}/edit" %></h2>
+<div class="col-md-4">
+<img style="float:left;" class="placeImg" src="<%=@place.photo_url%>" height="250" width="250">
+</div>
+
+<div class="col-md-7">
+<%=@place.description%>
+<br><br>
+<div class="row col-md-6">
+<form class="form-horizontal" action="/places/review/<%=@id%>">
+<label>Review title:</label><br>
+<input class="form-control" type="text" name="title">
+<label>Review:</label><br>
+<input class="form-control" type="text" name="description">
+<br><br>
+<label>Rating:</label><br>
+<select class="form-control" type="text" name="rating">
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+  <option>5</option>
+  </select>
+<br><br>
+<button class="form-control">Submit</button>
+</form>
+</div>
+</div>
+</div>
+
+<div class="row-md-0.0 col-md-10" style = "padding:1px; margin:20px; border:solid black; border-radius:10px; background-color:#f0ffff">
+<h2>Reviews</h2>
+ <p>
+ <% @reviews.each do |review| %>
+  <% (1..review.rating.to_f).each do %>
+  &#9733;
+  <% end %>
+
+  <%=review.description%>
+  <br><br>
+ <% end %>
+
+</div>
+<br><br>
