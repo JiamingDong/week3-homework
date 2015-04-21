@@ -9,35 +9,39 @@ Place.destroy_all
 Review.destroy_all
 
 Place.create(
-	[{ :title => "Garfield Park Conservatory", 
-	   :description => "Humboldt Park is one of 77 officially designated 
-	                    community areas, located on the West Side of Chicago, Illinois.
-	                    The Humboldt Park neighborhood is known for its dynamic social 
-	                    and ethnic demographic change over the years and the Puerto Rican 
-	                    community has identified strongly with the area since the 1970s, but 
-	                    their actual presence has been on the wane due to gentrification of the 
-	                    neighborhood. Humboldt Park is also the name of a 207-acre (0.8 km²) park 
-	                    adjacent to the community area.", 
-	   :admission_price => 0, 
-	   :photo_url => "http://archive2.chihuly.com/Data/Sites/2/PhotoDetail/CdGarfield_Img0073B.jpg"}, 
+	[{ :title => "Willis Tower", 
+	   :description => "A bustling community of business, tourism and culture, Willis Tower is so much more than North America's tallest building. 
+	   It’s home to large well-known companies as well as hundreds of thriving businesses run by smart, 
+	   passionate people. More than an office building, it’s a cultural landmark and iconic Chicago tourist attraction. ", 
+	   :admission_price => 24, 
+	   :photo_url => "http://upload.wikimedia.org/wikipedia/commons/b/ba/Sears_Tower_ss.jpg"}, 
 
-	 { :title => "Helen's Two Way Lounge", 
-	   :description => "A real gross dive", 
-	   :admission_price => 500, 
-	   :photo_url => "http://assets.dnainfo.com/generated/chicago_photo/2014/07/two-way-sale-1406671459.jpg/larger.jpg"}, 
+	 { :title => "Adler Planetarium", 
+	   :description => "The Adler Planetarium invites you to explore outer space without leaving Chicago. 
+	   Follow astronauts into orbit and experience the beauty of starry night skies. 
+	   Learn about current NASA missions, discover the Milky Way, and investigate what lies beyond in nine exhibitions and multiple theaters!", 
+	   :admission_price => 50, 
+	   :photo_url => "https://cbschicago.files.wordpress.com/2011/09/adler-planetarium-thinkstock.jpg"}, 
 
-	 { :title => "Humboldt Park", 
-	   :description => "A rpretty good park", 
-	   :admission_price => 0, 
-	   :photo_url => "http://chicagoapartmentfinders.com/images/neighborhood_pics/humboldt-park1.jpg"},
+	 { :title => "Art Institute of Chicago", 
+	   :description => "Chicago may be the Second City, but there is nothing second rate about this art collection. 
+	   Feast your eyes upon masterworks by Hopper, Monet, and Rembrandt, 
+	   as well as an expansive collection of contemporary art. 
+	   A highlight: Seeing the iconic American Gothic up close.", 
+	   :admission_price => 10, 
+	   :photo_url => "http://upload.wikimedia.org/wikipedia/commons/7/70/Art_Institute_of_Chicago_Lion_Statue_(2-D).jpg"},
 
-	 { :title => "The Empty Bottle", 
-	   :description => "A scummy venue", 
-	   :admission_price => 1000,
-	   :photo_url => "http://www.foodrepublic.com/sites/default/files/imagecache/enlarge/bottle03.jpg"}, 
+	 { :title => "Chicago Children's Museum", 
+	   :description => "There are so many ways to play at Chicago Children’s Museum! At CCM, you can dig for dinosaur bones, 
+	   climb a three-story schooner, construct a skyscraper, damn up a river, 
+	   tinker with real tools, drive a fire truck, make art to take home and so much more. Located on historic Navy Pier, on the shores of Lake Michigan, 
+	   Chicago Children’s Museum is three floors of fun for children (ages 10 and under) and their families!", 
+	   :admission_price => 100,
+	   :photo_url => "http://blog.navypier.com/wp-content/uploads/2013/11/681x454.jpg"}, 
 
-	 { :title => "Logan Theater", 
-	   :description => "A good second-run movie theater", 
-	   :admission_price => 750, 
-	   :photo_url => "https://renaissancecompanies.files.wordpress.com/2012/03/logan-theatre.png"}
+	 { :title => "Jiaming Dong's House", 
+	   :description => "Feel free to visit my house. I can provide you with delicious food and have fun with you. 来了你就别想走了哈哈。
+	   ", 
+	   :admission_price => 20, 
+	   :photo_url => "https://rp.uchicago.edu/i/6011_s_ingleside/main_image.jpg"}
 	])

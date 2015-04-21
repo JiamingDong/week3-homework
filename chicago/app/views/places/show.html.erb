@@ -1,42 +1,74 @@
-<div class="row-fluid">
-<h2><%=@place.title%> <%= link_to "(Edit)", "/places/#{@place.id}/edit" %></h2>
+
+<style> .img { width: 250px; height: 250px; border:2px solid #fff; background: url(img/tiger.png) no-repeat; -moz-box-shadow: 10px 10px 5px #ccc; -webkit-box-shadow: 10px 10px 5px #ccc; box-shadow: 10px 10px 5px #ccc; -moz-border-radius:25px; -webkit-border-radius:25px; border-radius:25px; }</style> 
+<script language="javascript">
+function onChange(){
+  var elem = document.getElementById("attitude");
+  var selectedIndex = document.getElementById("star_selector").selectedIndex;
+  switch(selectedIndex) {
+    case 0:
+    elem.innerHTML = "I hate it";
+    break;
+    case 1:
+    elem.innerHTML = "I don't like it";
+    break;
+    case 2:
+    elem.innerHTML = "It‘s okay";
+    break;
+    case 3:
+    elem.innerHTML = "I like it";
+    break;
+    case 4:
+    elem.innerHTML = "I love it";
+    break;
+    default:
+    break;
+  }
+}
+</script>
+
+<h2><center><font color="#3399FF"><%=@place.title%></font></center></h2>
+<h3><font color="green">Admission Price: $<%= '%.2f' % @place.admission_price.to_f%></font> <%= link_to "(Edit)", "/places/#{@place.id}/edit" %></h3>
 <div class="col-md-4">
-<img style="float:left;" class="placeImg" src="<%=@place.photo_url%>" height="250" width="250">
+<img style="float:left;" class="img" src="<%=@place.photo_url%>" height="250" width="250">
+
 </div>
 
 <div class="col-md-7">
 <%=@place.description%>
 <br><br>
 <div class="row col-md-6">
-<form class="form-horizontal" action="/places/review/<%=@id%>">
-<label>Review title:</label><br>
-<input class="form-control" type="text" name="title">
-<label>Review:</label><br>
-<input class="form-control" type="text" name="description">
-<br><br>
-<label>Rating:</label><br>
-<select class="form-control" type="text" name="rating">
-  <option>1</option>
-  <option>2</option>
-  <option>3</option>
-  <option>4</option>
-  <option>5</option>
-  </select>
-<br><br>
-<button class="form-control">Submit</button>
+
+<label>Write a review</label>
+<form class="form-horizontal" action="/places/review/<%=@id%>" id="review_submitter">
+
+<strong id="attitude">I love it</strong>
+<select class="form-control" type="text" name="rating" onchange="onChange()" id="star_selector">
+  <option value="1">Star 1</option>
+  <option value="2">Star 2</option>
+  <option value="3">Star 3</option>
+  <option value="4">Star 4</option>
+  <option selected="selected" value="5">Star 5</option>
+  </select><br>
+
+<textarea name="description" form="review_submitter" class="form-control" placeholder="Enter your review here..."></textarea><br>
+
+<input class="form-control" type="text" name="title" placeholder="Headline for your review"><br>
+
+<button class="form-control" style="background-color:lightblue">Submit</button>
 </form>
 </div>
 </div>
 </div>
 
 <div class="row-md-0.0 col-md-10" style = "padding:1px; margin:20px; border:solid black; border-radius:10px; background-color:#f0ffff">
-<h2>Reviews</h2>
+<h2>Customer Reviews</h2>
  <p>
  <% @reviews.each do |review| %>
   <% (1..review.rating.to_f).each do %>
   &#9733;
   <% end %>
-
+  <strong><%=review.title%></strong>
+  <br>
   <%=review.description%>
   <br><br>
  <% end %>

@@ -1,7 +1,6 @@
-<br>
-<h2>Add a New Place</h2>
+<h2>Edit the Place</h2>
 <div class="row col-md-8 col-md-offset-0.0">
-<form class="form-horizontal" action="/places/<%=@place.id%>/update/">
+<form class="form-horizontal" action="/places/<%=@place.id%>/update/" id="edit_submitter">
 <label>Title:</label>
 <input class="form-control" type="text" name="title" value="<%=@place.title%>">
 <br>
@@ -12,9 +11,9 @@
 <input class="form-control" type="text" name="admission_price" value="<%=@place.admission_price%>">
 <br>
 <label>Description:</label>
-<input class="form-control" type="text" name="description" value="<%=@place.description%>">
+<textarea form="edit_submitter" class="form-control" type="text" name="description"><%=@place.description%></textarea>
 <br>
 
-<button class="form-control">Submit</button>
+<button class="form-control" style="background-color:lightblue">Submit</button>
 </form>
 </div>

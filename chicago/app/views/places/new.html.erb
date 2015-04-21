@@ -1,20 +1,19 @@
-<br>
 <h2>Add a New Place</h2>
 <div class="row col-md-8 col-md-offset-0.0">
-<form class="form-horizontal" action="/places/create/">
+<form class="form-horizontal" action="/places/create/" id="new_place_submitter">
 <label>Title:</label>
-<input class="form-control" type="text" name="title">
+<input class="form-control" type="text" name="title" placeholder="Enter the title of the new place.">
 <br>
 <label>Photo URL:</label>
-<input class="form-control" type="text" name="photo_url">
+<input class="form-control" type="text" name="photo_url" placeholder="Enter the photo's url of the new place.">
 <br>
 <label>Price:</label>
-<input class="form-control" type="text" name="admission_price">
+<input class="form-control" type="text" name="admission_price" placeholder="Enter the admission price of the new place (in cents).">
 <br>
 <label>Description:</label>
-<input class="form-control" type="text" name="description">
+<textarea form="new_place_submitter" class="form-control" type="text" name="description" placeholder="Enter your description about the new place..."></textarea>
 <br>
 
-<button class="form-control">Submit</button>
+<button class="form-control" style="background-color:lightblue">Submit</button>
 </form>
 </div>
